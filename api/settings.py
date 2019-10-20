@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'notes.apps.NotesConfig',
 ]
+AUTH_USER_MODEL = 'notes.User' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,9 +53,11 @@ MIDDLEWARE = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
+    'EXCEPTION_HANDLER': 'core.exceptions.core_exception_handler',
+    'NON_FIELD_ERRORS_KEY': 'error',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+      'notes.jwt_authentication.JWTAuthentication',
+    ),
 }
 
 ROOT_URLCONF = 'api.urls'
