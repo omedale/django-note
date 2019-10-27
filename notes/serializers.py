@@ -61,10 +61,10 @@ class LoginSerializer(serializers.Serializer):
 class NoteSerializer(serializers.ModelSerializer):
   title = serializers.CharField(max_length=120)
   body = serializers.CharField()
-
-  def create(self, validated_data):
-      return Note.objects.create(**validated_data)
   
   class Meta:
     model = Note
-    fields = ('id', 'title', 'body',)
+    fields = ('id', 'title', 'body','owner',)
+    extra_kwargs = {
+      'owner' : {'read_only' : True}
+    }
