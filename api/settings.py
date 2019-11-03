@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'gunicorn',
     'notes.apps.NotesConfig',
 ]
 AUTH_USER_MODEL = 'notes.User' 
