@@ -1,5 +1,6 @@
 from django.db import models
 import jwt
+from django.contrib.auth.models import UserManager
 from datetime import datetime, timedelta
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -7,8 +8,6 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
 from django.conf import settings
-
-from .user_manager import UserManager
 
 class User(AbstractBaseUser, PermissionsMixin):
   username = models.CharField(db_index=True, max_length=255, unique=True)
