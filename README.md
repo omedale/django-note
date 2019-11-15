@@ -10,7 +10,7 @@ The APIs allow users to create an account and save notes online.
 
 ## App Installation
 
-1. Install Rails at the command prompt if you haven't yet:
+1. Clone repo:
 
         $ git clone https://github.com/omedale/django-note.git
 
