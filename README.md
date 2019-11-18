@@ -39,6 +39,11 @@ The APIs allow users to create an account and save notes online.
 
           $ python manage.py runserver
 
+8. Run test
+        
+        $ python manage.py test
+
+
 visit: `http://127.0.0.1:8000/admin` on your browser and login with the admin user you created above
 
 ## Endpoints
